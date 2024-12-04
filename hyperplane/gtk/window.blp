@@ -271,12 +271,17 @@ template $HypWindow: Adw.ApplicationWindow {
             view: tab_view;
           }
 
-          [top]
-          Adw.Banner banner {
-            button-clicked => $_banner_button_clicked();
-          }
+          Box {
+            orientation: vertical;
 
-          Adw.TabView tab_view {}
+            Adw.Banner banner {
+              button-clicked => $_banner_button_clicked();
+            }
+
+            Adw.TabView tab_view {
+              vexpand: true;
+            }
+          }
 
           [bottom]
           ActionBar action_bar {
